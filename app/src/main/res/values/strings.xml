@@ -1,0 +1,7 @@
+<resources>
+    <string name="app_name">HealthMeasure</string>
+    <string name="title_activity_home">HomeActivity</string>
+    <string name="title_home">Water</string>
+    <string name="title_dashboard">Graphs</string>
+    <string name="title_notifications">Plans</string>
+</resources>
