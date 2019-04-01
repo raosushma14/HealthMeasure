@@ -1,6 +1,7 @@
 package com.example.sushma.healthmeasure;
 
 import android.app.Dialog;
+import android.content.Intent;
 import android.os.Bundle;
 import android.support.annotation.NonNull;
 import android.support.design.widget.BottomNavigationView;
@@ -55,22 +56,22 @@ public class HomeActivity extends AppCompatActivity {
 
     @Override
     public boolean onOptionsItemSelected(MenuItem item) {
+
+        Fragment selectedFragment = null;
         switch(item.getItemId()){
 
             case R.id.item1:
-                //Log.d("switch","Entered item 1");
-                myDialog.setContentView(R.layout.popup);
-                myDialog.show();
-                //Toast.makeText(this,"Item 1 selected",Toast.LENGTH_SHORT).show();
-                return true;
+                Log.d("switch","Entered item 2");
+                selectedFragment = new Popupfragment();
+                break;
             case R.id.item2:
-                //Log.d("switch","Entered item 2");
-                Toast.makeText(this,"Item 2 selected",Toast.LENGTH_SHORT).show();
-                return true;
+                selectedFragment = new UsefulLinksFragments();
+                break;
             //default:  return super.onOptionsItemSelected(item);
 
 
         }
+        getSupportFragmentManager().beginTransaction().replace(R.id.fragment_container,selectedFragment).commit();
         return super.onOptionsItemSelected(item);
     }
 

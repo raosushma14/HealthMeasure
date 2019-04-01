@@ -1,0 +1,92 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout
+    xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent">
+
+    <TextView
+        android:id="@+id/textView16"
+        android:layout_width="wrap_content"
+        android:layout_height="32dp"
+        android:layout_alignParentStart="true"
+        android:layout_alignParentTop="true"
+        android:layout_marginStart="0dp"
+        android:layout_marginTop="214dp"
+        android:text="4. https://www.healthline.com/nutrition/too-much-sugar"
+        tools:layout_editor_absoluteX="5dp"
+        tools:layout_editor_absoluteY="178dp"
+        android:autoLink="web"
+        android:clickable="true"/>
+
+    <TextView
+        android:id="@+id/textView12"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_alignStart="@+id/textView16"
+        android:layout_alignParentTop="true"
+        android:layout_marginStart="3dp"
+        android:layout_marginTop="38dp"
+        android:text="Benefiacial sites for mainitaing good health:"
+        android:textStyle="bold|italic"
+        tools:layout_editor_absoluteX="5dp"
+        tools:layout_editor_absoluteY="7dp"
+        android:autoLink="web"
+        android:clickable="true"/>
+
+    <TextView
+        android:id="@+id/textView13"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_above="@+id/textView14"
+        android:layout_alignParentStart="true"
+        android:layout_marginBottom="-110dp"
+        android:text="1. https://www.healthline.com/nutrition/7-health-benefits-of-water#section7"
+        tools:layout_editor_absoluteX="5dp"
+        tools:layout_editor_absoluteY="36dp"
+
+        android:autoLink="web"
+        android:clickable="true"/>
+
+    <TextView
+        android:id="@+id/textView14"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_alignParentStart="true"
+        android:layout_alignParentLeft="true"
+        android:layout_alignParentTop="true"
+        android:layout_marginStart="2dp"
+        android:layout_marginLeft="2dp"
+        android:layout_marginTop="127dp"
+        android:text="2. https://health.gov/dietaryguidelines/"
+        tools:layout_editor_absoluteX="5dp"
+        tools:layout_editor_absoluteY="86dp"
+        android:autoLink="web"
+        android:clickable="true"/>
+
+    <TextView
+        android:id="@+id/textView15"
+        android:layout_width="wrap_content"
+        android:layout_height="32dp"
+        android:layout_alignParentStart="true"
+        android:layout_alignParentTop="true"
+        android:layout_marginStart="0dp"
+        android:layout_marginTop="168dp"
+        android:text="3. https://www.healthline.com/nutrition/top-10-evidence-based-health-benefits-of-turmeric"
+        tools:layout_editor_absoluteX="5dp"
+        tools:layout_editor_absoluteY="127dp"
+        android:autoLink="web"
+        android:clickable="true"/>
+
+    <TextView
+        android:id="@+id/textView18"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_alignStart="@+id/textView12"
+        android:layout_alignParentBottom="true"
+        android:layout_marginStart="0dp"
+        android:layout_marginBottom="239dp"
+        android:text="5. https://www.healthline.com/nutrition/alcohol-good-or-bad"
+        android:autoLink="web"
+        android:clickable="true"/>
+</RelativeLayout>
