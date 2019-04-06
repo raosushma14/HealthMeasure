@@ -17,6 +17,7 @@
         android:layout_marginEnd="17dp"
         android:layout_marginRight="17dp"
         android:clickable="true"
+        app:backgroundTint="@color/colorPrimaryDark"
         app:srcCompat="@android:drawable/ic_input_add" />
 
     <EditText
@@ -32,7 +33,8 @@
         android:ems="10"
         android:inputType="textPersonName"
         android:text="Dinner"
-        android:textSize="14sp" />
+        android:textSize="14sp"
+        android:typeface="serif" />
 
     <android.support.design.widget.FloatingActionButton
         android:id="@+id/btn_snack2"
@@ -45,6 +47,7 @@
         android:layout_marginEnd="19dp"
         android:layout_marginRight="19dp"
         android:clickable="true"
+        app:backgroundTint="@color/colorPrimaryDark"
         app:srcCompat="@android:drawable/ic_input_add" />
 
     <EditText
@@ -60,7 +63,8 @@
         android:ems="10"
         android:inputType="textPersonName"
         android:text="Snack2"
-        android:textSize="14sp" />
+        android:textSize="14sp"
+        android:typeface="serif" />
 
     <EditText
         android:id="@+id/breakfast_txt3"
@@ -75,7 +79,8 @@
         android:ems="10"
         android:inputType="textPersonName"
         android:text="Lunch"
-        android:textSize="14sp" />
+        android:textSize="14sp"
+        android:typeface="serif" />
 
     <EditText
         android:id="@+id/breakfast_txt"
@@ -90,7 +95,8 @@
         android:ems="10"
         android:inputType="textPersonName"
         android:text="Breakfast"
-        android:textSize="14sp" />
+        android:textSize="14sp"
+        android:typeface="serif" />
 
     <EditText
         android:id="@+id/breakfast_txt2"
@@ -105,7 +111,8 @@
         android:ems="10"
         android:inputType="textPersonName"
         android:text="Snack1"
-        android:textSize="14sp" />
+        android:textSize="14sp"
+        android:typeface="serif" />
 
     <android.support.design.widget.FloatingActionButton
         android:id="@+id/btn_breakfast"
@@ -118,6 +125,7 @@
         android:layout_marginEnd="18dp"
         android:layout_marginRight="18dp"
         android:clickable="true"
+        app:backgroundTint="@color/colorPrimaryDark"
         app:srcCompat="@android:drawable/ic_input_add" />
 
     <android.support.design.widget.FloatingActionButton
@@ -131,6 +139,7 @@
         android:layout_marginEnd="19dp"
         android:layout_marginRight="19dp"
         android:clickable="true"
+        app:backgroundTint="@color/colorPrimaryDark"
         app:srcCompat="@android:drawable/ic_input_add" />
 
     <android.support.design.widget.FloatingActionButton
@@ -144,14 +153,7 @@
         android:layout_marginEnd="19dp"
         android:layout_marginRight="19dp"
         android:clickable="true"
+        app:backgroundTint="@color/colorPrimaryDark"
         app:srcCompat="@android:drawable/ic_input_add" />
 
-    <Button
-        android:id="@+id/button"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:layout_alignParentBottom="true"
-        android:layout_centerHorizontal="true"
-        android:layout_marginBottom="58dp"
-        android:text="SAVE" />
 </RelativeLayout>

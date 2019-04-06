@@ -9,12 +9,14 @@ import android.net.Uri;
 import android.os.Build;
 import android.support.v4.app.ActivityCompat;
 import android.support.v4.content.ContextCompat;
+import android.support.v4.widget.SwipeRefreshLayout;
 import android.support.v7.app.AlertDialog;
 import android.support.v7.app.AppCompatActivity;
 import android.os.Bundle;
 import android.util.Log;
 import android.view.SearchEvent;
 import android.view.View;
+import android.widget.AdapterView;
 import android.widget.ArrayAdapter;
 import android.widget.AutoCompleteTextView;
 import android.widget.Button;
@@ -54,6 +56,8 @@ public class AddMeal extends AppCompatActivity {
     private RequestQueue mQueue;
     public String STATIC_STRING;
     TextView txtview;
+    private SwipeRefreshLayout refreshLayout;
+
 
     ArrayList<String> list = new ArrayList<String>();
     ArrayAdapter<String> adapter;
@@ -66,6 +70,7 @@ public class AddMeal extends AppCompatActivity {
         mysearchView = (SearchView) findViewById(R.id.searchview_id);
         listView = (ListView) findViewById(R.id.id_listview);
         txtview = (TextView) findViewById(R.id.txt_set);
+        refreshLayout = (SwipeRefreshLayout)findViewById(R.id.refreshLayout);
 
 
 
@@ -101,6 +106,23 @@ public class AddMeal extends AppCompatActivity {
             }
         });
 
+        listView.setOnItemClickListener(new AdapterView.OnItemClickListener() {
+            @Override
+            public void onItemClick(AdapterView<?> parent, View view, int position, long id) {
+                String itemClicked = list.get(position).toString();
+                Intent intent = new Intent(getApplicationContext(),CaloriePerServings.class);
+                intent.putExtra("foodSelected",itemClicked);
+                startActivity(intent);
+            }
+        });
+
+        refreshLayout.setOnRefreshListener(new SwipeRefreshLayout.OnRefreshListener() {
+            @Override
+            public void onRefresh() {
+                adapter.clear();
+                refreshLayout.setRefreshing(false);
+            }
+        });
 
 
     }
@@ -115,14 +137,7 @@ public class AddMeal extends AppCompatActivity {
             jsonParse("item?upc=" + s, "foods");
 
             Log.d("Check", "It is done");
-           /* txtview.setText(s);
 
-            txtview.setOnClickListener(new View.OnClickListener() {
-                @Override
-                public void onClick(View v) {
-
-                }
-            });*/
         }catch(Exception e){
             Log.d("Check",e.getMessage());
         }
@@ -183,4 +198,72 @@ public class AddMeal extends AppCompatActivity {
 
 
     }
+
+
+
+    //To be deleted later
+    public void jsonParse1(){
+
+        String url = "https://trackapi.nutritionix.com/v2/natural/nutrients";
+        Log.d("Check",url);
+
+        JsonObjectRequest request=new JsonObjectRequest(Request.Method.POST, url, null, new Response.Listener<JSONObject>() {
+            @Override
+            public void onResponse(JSONObject response) {
+
+                Log.d("Post",response.toString());
+               /* try {
+                    /*JSONArray jsonArray= response.getJSONArray(xmlHead);
+
+                    for(int i=0; i<jsonArray.length();i++)
+                    {
+                        JSONObject employee= jsonArray.getJSONObject(i);
+
+                        String firstName=employee.getString("food_name");
+
+                    }
+
+                } catch (JSONException e) {
+                    e.printStackTrace();
+                }*/
+            }
+        }, new Response.ErrorListener() {
+            @Override
+            public void onErrorResponse(VolleyError error) {
+                Log.d("check","Error");
+                //Toast.makeText(AddMeal.this,"This item is not found",Toast.LENGTH_LONG).show();
+                error.printStackTrace();
+            }
+        }){
+            @Override
+            public Map getHeaders() throws AuthFailureError
+            {
+                HashMap headers = new HashMap();
+                headers.put("x-app-id", "a7204bb4");
+                headers.put("x-app-key", "88c2a1513a9f43b9ab83474a9a3d5ce7");
+                headers.put("Content-Type","application/json");
+                return headers;
+            }
+
+            @Override
+            protected Map<String, String> getParams()
+            {
+                Map<String, String>  params = new HashMap<String, String>();
+                params.put("query", "2 eggs");
+                params.put("timezone", "US/Eastern");
+
+
+                return params;
+            }
+
+
+        };
+
+        mQueue.add(request);
+
+
+
+    }
+
+
 }

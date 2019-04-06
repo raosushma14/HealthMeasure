@@ -17,7 +17,8 @@
         android:layout_marginLeft="10dp"
         android:layout_marginTop="399dp"
         android:text="5. Drinking More Water Can Help With Weight Loss"
-        android:textSize="18sp" />
+        android:textSize="18sp"
+        android:typeface="serif" />
 
     <TextView
         android:id="@+id/textView7"
@@ -30,7 +31,8 @@
         android:layout_marginLeft="9dp"
         android:layout_marginTop="345dp"
         android:text="4. Drinking Water May Help Treat Kidney Stones"
-        android:textSize="18sp" />
+        android:textSize="18sp"
+        android:typeface="serif" />
 
     <TextView
         android:id="@+id/textView6"
@@ -43,7 +45,8 @@
         android:layout_marginLeft="10dp"
         android:layout_marginTop="293dp"
         android:text="3. Drinking Water May Help to Prevent and Treat Headaches"
-        android:textSize="18sp" />
+        android:textSize="18sp"
+        android:typeface="serif" />
 
     <TextView
         android:id="@+id/textView4"
@@ -56,7 +59,8 @@
         android:layout_marginLeft="12dp"
         android:layout_marginTop="190dp"
         android:text="1. Water Helps to Maximize Physical Performance"
-        android:textSize="18sp" />
+        android:textSize="18sp"
+        android:typeface="serif" />
 
     <TextView
         android:layout_width="wrap_content"
@@ -69,7 +73,8 @@
         android:layout_marginTop="156dp"
         android:text="Benefits of drinking water: "
         android:textSize="18sp"
-        android:textStyle="bold|italic" />
+        android:textStyle="bold|italic"
+        android:typeface="serif" />
 
     <TextView
         android:id="@+id/textView5"
@@ -82,7 +87,8 @@
         android:layout_marginLeft="11dp"
         android:layout_marginTop="242dp"
         android:text="2. Hydration Has a Major Effect on Energy Levels and Brain Function"
-        android:textSize="18sp" />
+        android:textSize="18sp"
+        android:typeface="serif" />
 
     <EditText
         android:id="@+id/water_input"
@@ -96,7 +102,8 @@
         android:layout_marginRight="113dp"
         android:ems="10"
         android:hint="Enter water in ounces"
-        android:inputType="number" />
+        android:inputType="number"
+        android:typeface="serif" />
 
     <ImageView
         android:id="@+id/imageView2"
@@ -118,7 +125,8 @@
         android:layout_marginStart="17dp"
         android:layout_marginLeft="17dp"
         android:layout_marginTop="106dp"
-        android:text="Your water consumption this day is:" />
+        android:text="Your water consumption this day is:"
+        android:typeface="serif" />
 
     <TextView
         android:id="@+id/water_txt"
@@ -129,6 +137,7 @@
         android:layout_alignParentRight="true"
         android:layout_marginEnd="75dp"
         android:layout_marginRight="75dp"
-        android:text="TextView" />
+        android:text="TextView"
+        android:typeface="serif" />
 
 </RelativeLayout>

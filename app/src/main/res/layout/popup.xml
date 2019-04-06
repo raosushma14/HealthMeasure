@@ -17,7 +17,8 @@
         android:layout_marginLeft="5dp"
         android:layout_marginTop="425dp"
         android:text="@Copyright"
-        android:textStyle="bold|italic" />
+        android:textStyle="bold|italic"
+        android:typeface="serif" />
 
     <TextView
         android:id="@+id/textView8"
@@ -30,7 +31,8 @@
         android:layout_marginLeft="205dp"
         android:layout_marginTop="32dp"
         android:text="Sushma Rao"
-        android:textStyle="bold" />
+        android:textStyle="bold"
+        android:typeface="serif" />
 
     <ImageView
         android:id="@+id/imageView3"
@@ -67,7 +69,8 @@
         android:layout_marginLeft="88dp"
         android:layout_marginTop="48dp"
         android:text="Designed and developed by"
-        android:textStyle="bold|italic" />
+        android:textStyle="bold|italic"
+        android:typeface="serif" />
 
     <TextView
         android:id="@+id/textView11"
@@ -80,7 +83,8 @@
         android:layout_marginLeft="49dp"
         android:layout_marginTop="87dp"
         android:text="Graduate Students at Universty of Michigan "
-        android:textStyle="bold|italic" />
+        android:textStyle="bold|italic"
+        android:typeface="serif" />
 
     <TextView
         android:id="@+id/textView3"
@@ -93,6 +97,7 @@
         android:layout_marginLeft="40dp"
         android:layout_marginTop="33dp"
         android:text="Sangeeta Desai"
-        android:textStyle="bold" />
+        android:textStyle="bold"
+        android:typeface="serif" />
 
 </RelativeLayout>

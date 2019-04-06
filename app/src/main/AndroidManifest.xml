@@ -3,7 +3,7 @@
     package="com.example.sushma.healthmeasure">
 
     <uses-permission android:name="android.permission.CAMERA" />
-    <uses-permission android:name="android.permission.INTERNET"/>
+    <uses-permission android:name="android.permission.INTERNET" />
 
     <uses-feature android:name="android.hardware.camera2" />
     <uses-feature android:name="android.hardware.autofocus" />
@@ -27,7 +27,8 @@
             android:name=".HomeActivity"
             android:label="@string/title_activity_home" />
         <activity android:name=".AddMeal" />
-        <activity android:name=".ScanCodeActivity"></activity>
+        <activity android:name=".ScanCodeActivity" />
+        <activity android:name=".CaloriePerServings"></activity>
     </application>
 
 </manifest>
