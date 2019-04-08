@@ -57,6 +57,7 @@ public class AddMeal extends AppCompatActivity {
     public String STATIC_STRING;
     TextView txtview;
     private SwipeRefreshLayout refreshLayout;
+    int mealOptionSelected;
 
 
     ArrayList<String> list = new ArrayList<String>();
@@ -65,6 +66,8 @@ public class AddMeal extends AppCompatActivity {
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_add_meal);
+
+        mealOptionSelected =  getIntent().getIntExtra("mealAdded",0);
 
         button = (ImageButton) findViewById(R.id.barcode_btn);
         mysearchView = (SearchView) findViewById(R.id.searchview_id);
@@ -90,8 +93,9 @@ public class AddMeal extends AppCompatActivity {
 
             @Override
             public boolean onQueryTextChange(String newText) {
-                jsonParse(newText,"common");
-                return false;
+
+                    return false;
+
             }
         });
 
@@ -111,7 +115,10 @@ public class AddMeal extends AppCompatActivity {
             public void onItemClick(AdapterView<?> parent, View view, int position, long id) {
                 String itemClicked = list.get(position).toString();
                 Intent intent = new Intent(getApplicationContext(),CaloriePerServings.class);
-                intent.putExtra("foodSelected",itemClicked);
+                Bundle extras = new Bundle();
+                extras.putString("foodSelected",itemClicked);
+                extras.putInt("mealAdded",mealOptionSelected);
+                intent.putExtras(extras);
                 startActivity(intent);
             }
         });
@@ -129,14 +136,14 @@ public class AddMeal extends AppCompatActivity {
 
     protected void onResume(){
         super.onResume();
-        Log.d("Check","onresume");
+
 
         try {
             final String s = ((DataClass) this.getApplication()).getSomeVariable();
-            Log.d("Check", s);
+
             jsonParse("item?upc=" + s, "foods");
 
-            Log.d("Check", "It is done");
+
 
         }catch(Exception e){
             Log.d("Check",e.getMessage());
@@ -201,69 +208,7 @@ public class AddMeal extends AppCompatActivity {
 
 
 
-    //To be deleted later
-    public void jsonParse1(){
 
-        String url = "https://trackapi.nutritionix.com/v2/natural/nutrients";
-        Log.d("Check",url);
-
-        JsonObjectRequest request=new JsonObjectRequest(Request.Method.POST, url, null, new Response.Listener<JSONObject>() {
-            @Override
-            public void onResponse(JSONObject response) {
-
-                Log.d("Post",response.toString());
-               /* try {
-                    /*JSONArray jsonArray= response.getJSONArray(xmlHead);
-
-                    for(int i=0; i<jsonArray.length();i++)
-                    {
-                        JSONObject employee= jsonArray.getJSONObject(i);
-
-                        String firstName=employee.getString("food_name");
-
-                    }
-
-                } catch (JSONException e) {
-                    e.printStackTrace();
-                }*/
-            }
-        }, new Response.ErrorListener() {
-            @Override
-            public void onErrorResponse(VolleyError error) {
-                Log.d("check","Error");
-                //Toast.makeText(AddMeal.this,"This item is not found",Toast.LENGTH_LONG).show();
-                error.printStackTrace();
-            }
-        }){
-            @Override
-            public Map getHeaders() throws AuthFailureError
-            {
-                HashMap headers = new HashMap();
-                headers.put("x-app-id", "a7204bb4");
-                headers.put("x-app-key", "88c2a1513a9f43b9ab83474a9a3d5ce7");
-                headers.put("Content-Type","application/json");
-                return headers;
-            }
-
-            @Override
-            protected Map<String, String> getParams()
-            {
-                Map<String, String>  params = new HashMap<String, String>();
-                params.put("query", "2 eggs");
-                params.put("timezone", "US/Eastern");
-
-
-                return params;
-            }
-
-
-        };
-
-        mQueue.add(request);
-
-
-
-    }
 
 
 }

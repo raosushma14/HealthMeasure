@@ -18,7 +18,9 @@
         android:inputType="number"
         android:textSize="14sp"
         android:typeface="serif"
-        android:layout_toRightOf="@id/textView20"/>
+        android:layout_toRightOf="@id/textView20"
+        android:layout_alignParentRight="true"
+        android:layout_marginRight="6dp" />
 
     <TextView
         android:id="@+id/textView17"
@@ -61,7 +63,9 @@
         android:textColor="@color/common_google_signin_btn_text_dark_default"
         android:textSize="14sp"
         android:textStyle="bold"
-        android:typeface="serif" />
+        android:typeface="serif"
+        android:layout_alignLeft="@+id/textView17"
+        android:layout_marginLeft="141dp" />
 
     <TextView
         android:id="@+id/textView20"
@@ -89,7 +93,9 @@
         android:ems="10"
         android:inputType="textPersonName"
         android:textSize="14sp"
-        android:typeface="serif" />
+        android:typeface="serif"
+        android:layout_alignParentRight="true"
+        android:layout_marginRight="30dp" />
 
     <EditText
         android:id="@+id/servings_txt"

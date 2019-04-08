@@ -1,5 +1,6 @@
 package com.example.sushma.healthmeasure;
 
+import android.database.Cursor;
 import android.graphics.Color;
 import android.os.Bundle;
 import android.support.annotation.NonNull;
@@ -19,12 +20,15 @@ import com.github.mikephil.charting.listener.OnChartValueSelectedListener;
 
 import org.w3c.dom.Entity;
 
+import java.text.SimpleDateFormat;
 import java.util.ArrayList;
+import java.util.Date;
 import java.util.Map;
 
 public class GraphFragment extends Fragment  {
 
     private static final String TAG = "Graph Fragment";
+    DatabaseHelper myDB;
 
     private LineChart mchart;
     @Nullable
@@ -38,8 +42,23 @@ public class GraphFragment extends Fragment  {
         //mchart.setOnChartValueSelectedListener(GraphFragment.this);
         mchart.setDragEnabled(true);
         mchart.setScaleEnabled(false);
-
         ArrayList<Entry> yValues = new ArrayList<>();
+
+        /*myDB = new DatabaseHelper(getActivity());
+
+        Cursor cursor = myDB.getDataBasedOnDate(getDate());
+
+        if(cursor.getCount() > 0 ){
+            while (cursor.moveToNext()){
+                if(cursor.getString(1) != "") {
+                    yValues.add(new Entry(Integer.parseInt(cursor.getString(0))),cursor.getFloat(6));
+
+                }
+            }
+        }*/
+
+
+
         yValues.add(new Entry(0,60f));
         yValues.add(new Entry(1,50f));
         yValues.add(new Entry(2,80f));
@@ -65,5 +84,11 @@ public class GraphFragment extends Fragment  {
 
 
 
+    }
+
+    public String getDate(){
+        SimpleDateFormat sdf = new SimpleDateFormat("dd");
+        String date = sdf.format(new Date());
+        return date;
     }
 }
